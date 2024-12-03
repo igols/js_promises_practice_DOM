@@ -39,10 +39,12 @@ const secondPromise = new Promise((resolve) => {
 
   document.addEventListener('click', (e) => {
     resolve(value);
+    e.preventDefault();
   });
 
   document.addEventListener('contextmenu', (e) => {
     resolve(value);
+    e.preventDefault();
   });
 });
 
@@ -57,11 +59,13 @@ const thirdPromise = new Promise((resolve, reject) => {
   document.addEventListener('click', (e) => {
     leftClick = true;
     both();
+    e.preventDefault();
   });
 
   document.addEventListener('contextmenu', (e) => {
     rightClick = true;
     both();
+    e.preventDefault();
   });
 
   function both() {
